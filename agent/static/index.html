@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>智能查询数据 Agent</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <aside class="info-panel">
+        <p class="eyebrow">DATA COPILOT</p>
+        <h1>智能查询数据 Agent</h1>
+        <p class="lead">
+          用自然语言提问，系统会自动识别筛选条件、统计方式和分组逻辑，并把结果输出成摘要、图表和表格。
+        </p>
+
+        <div class="meta-card">
+          <div>
+            <span class="meta-label">数据文件</span>
+            <strong id="data-file">加载中...</strong>
+          </div>
+          <div>
+            <span class="meta-label">记录条数</span>
+            <strong id="row-count">-</strong>
+          </div>
+          <div>
+            <span class="meta-label">可用字段</span>
+            <strong id="field-list">加载中...</strong>
+          </div>
+        </div>
+
+        <div class="meta-card status-card">
+          <div>
+            <span class="meta-label">智能解析</span>
+            <strong id="ai-status">检查中...</strong>
+          </div>
+          <div>
+            <span class="meta-label">模型</span>
+            <strong id="ai-model">-</strong>
+          </div>
+        </div>
+
+        <div class="tips-card">
+          <p class="tips-title">示例问题</p>
+          <button class="prompt-chip">华东地区销售额总和</button>
+          <button class="prompt-chip">状态为已完成的订单有多少条</button>
+          <button class="prompt-chip">按地区统计销售额</button>
+          <button class="prompt-chip">销售额最高的是哪条记录</button>
+          <button class="prompt-chip">利润平均值是多少</button>
+        </div>
+      </aside>
+
+      <main class="chat-panel">
+        <div class="chat-header">
+          <div>
+            <p class="chat-title">对话查询</p>
+            <p class="chat-subtitle">支持 OpenAI 增强解析、图表展示和结果导出</p>
+          </div>
+        </div>
+
+        <section id="chat-log" class="chat-log">
+          <article class="message assistant">
+            <div class="bubble bubble-rich">
+              <p class="summary">我已经准备好了。你可以直接输入问题，比如“按地区统计销售额”。</p>
+            </div>
+          </article>
+        </section>
+
+        <form id="query-form" class="composer">
+          <textarea
+            id="query-input"
+            rows="3"
+            placeholder="输入你的问题，例如：销售额大于 8000 的记录有哪些"
+          ></textarea>
+          <button type="submit" id="send-btn">发送</button>
+        </form>
+      </main>
+    </div>
+
+    <template id="suggestion-template">
+      <button class="inline-suggestion" type="button"></button>
+    </template>
+
+    <script src="/app.js"></script>
+  </body>
+</html>
