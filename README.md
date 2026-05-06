@@ -43,6 +43,7 @@ python webapp.py --data data/sample_sales.json
 如果没有设置 `OPENAI_API_KEY`，系统会自动回退到本地规则模式。
 
 ## 示例问题
+<img width="1916" height="1450" alt="image" src="https://github.com/user-attachments/assets/b9001055-2800-42da-a972-a3a8e3443246" />
 
 - `华东地区销售额总和`
 - `状态为已完成的订单有多少条`
